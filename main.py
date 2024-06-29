@@ -2,7 +2,6 @@ import pandas as pd
 import preprocessing
 import tfidf_extraction
 import keyword_extraction
-
 def print_results(idx, keywords, df):
     print("\n=====Title=====")
     print(df['title'][idx])
@@ -11,7 +10,6 @@ def print_results(idx, keywords, df):
     print("\n===Keywords===")
     for k in keywords:
         print(k, keywords[k])
-
 if __name__ == "__main__":
     df = pd.read_csv('papers.csv')
     docs = df['paper_text'].apply(lambda x: preprocessing.pre_process(x))
